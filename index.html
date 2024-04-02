@@ -2,57 +2,32 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/css/autoComplete.min.css">
+    <meta charset="UTF-8">
+    <title>Table Assignment</title>
+    <link rel='stylesheet'
+        href='https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/css/autoComplete.min.css'>
+    <link rel="stylesheet" href="./style.css">
+
 </head>
 
 <body>
-    <div class="autoComplete_wrapper">
-        <input id="autoComplete" type="search" dir="ltr" spellcheck=false autocorrect="off" autocomplete="off"
-            autocapitalize="off">
+    <!-- partial:index.partial.html -->
+    <div class="container">
+        <header class="header">
+            <h1>Table Assignment</h1>
+        </header>
+        <div class="body" align="center">
+            <div class="autoComplete_wrapper">
+                <input id="autoComplete" type="text" tabindex="1">
+            </div>
+            <div class="selection"></div>
+            <div class="selection" id="table"></div>
+        </div>
     </div>
-    <div class="selection"></div>
-    <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
-    <script>
-        var spreadsheet_id = "1fv6fiNrUdvV5lRUh_fNCOOKLAljCXkISNDI0f3ugLHg"
-        var sheet_name = "Sheet1"
-        var api_key = "AIzaSyDEyUl9FZ8KnjNowpPW6JZBhzDtRZFvB-E"
-        var range = "Sheet1!B2:C"
-        var url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheet_id}/values/${sheet_name}?alt=json&key=${api_key}&range=${range}`;
-        const autoCompleteJS = new autoComplete({
-            placeHolder: "Search Name",
-            data: {
-                src: async () => {
-                    try {
-                        const source = await fetch(url);
-                        const data = await source.json();
-                        const objs = data.values.map(x => ({
-                            name: x[0],
-                            table: x[1]
-                        }));
-                        return objs;
-                    } catch (error) {
-                        return error;
-                    }
-                },
-                keys: ["name"],
-                cache: true,
-            },
-            resultItem: {
-                highlight: true,
-            },
-            events: {
-                input: {
-                    selection: (event) => {
-                        const selection = event.detail.selection.value.name;
-                        const selection_table = event.detail.selection.value.table
-                        autoCompleteJS.input.value = selection;
-                        document.querySelector(".selection").innerHTML = `${selection} - table ${selection_table}`;
-                    }
-                }
-            }
-        });
-    </script>
+    <!-- partial -->
+    <script src='https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js'></script>
+    <script src="./script.js"></script>
+
 </body>
 
 </html>
