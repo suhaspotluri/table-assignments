@@ -44,7 +44,7 @@ const autoCompleteJS = new autoComplete({
 			list.prepend(info);
 		},
 		noResults: true,
-		maxResults: 15,
+		maxResults: 300,
 		tabSelect: true
 	},
 	resultItem: {
