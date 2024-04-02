@@ -32,7 +32,7 @@ const autoCompleteJS = new autoComplete({
 		keys: ["name"],
 		cache: true
 	},
-	placeHolder: "Enter your name to find your table",
+	placeHolder: "Enter name to find table",
 	resultsList: {
 		element: (list, data) => {
 			const info = document.createElement("p");
@@ -56,7 +56,7 @@ const autoCompleteJS = new autoComplete({
       <span style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
         ${data.match}
       </span>
-      <span style="display: flex; align-items: center; font-size: 13px; font-weight: 100; text-transform: uppercase; color: rgba(0,0,0,0.5);">
+      <span style="display: flex; align-items: center; font-size: 13px; font-weight: 100; text-transform: uppercase; color: rgba(0,0,0,0.0);">
         ${data.key}
       </span>`;
 		},
