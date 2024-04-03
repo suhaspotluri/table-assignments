@@ -4,6 +4,18 @@
 		url('Baskerville Book BQ Regular.otf') format('opentype');
 }
 
+@font-face {
+	font-family: "MrsEavesRoman Regular";
+	src:
+		url('MrsEavesRoman-Regular.ttf') format('opentype');
+}
+
+@font-face {
+	font-family: "Baskerville Book BQ Italic";
+	src:
+		url('Baskerville Book BQ Italic.otf') format('opentype');
+}
+
 :root {
 	--transition-1: all 0.3s ease-in-out;
 	--transition-2: all 0.2s ease-in-out;
@@ -52,7 +64,13 @@ body {
 }
 
 h1 {
-	color: #89907c;
+	color: rgb(64, 79, 38);
+	font-family: "MrsEavesRoman Regular";
+	font-weight: 400;
+	letter-spacing: 5px;
+	font-style: normal;
+	line-height: 1;
+	text-transform: uppercase;
 	transition: var(--transition-1);
 }
 
@@ -61,13 +79,13 @@ h1>a {
 	color: #89907c;
 }
 
-h1>a::-moz-selection {
+/* h1>a::-moz-selection {
 	color: #89907c;
-}
+} */
 
-h1>a::selection {
+/* h1>a::selection {
 	color: #89907c;
-}
+} */
 
 h4 {
 	margin-bottom: 5px;
@@ -139,17 +157,18 @@ h4::selection {
 }
 
 .selection {
-	margin-top: 25vh;
+	margin-top: 5vh;
 	font-size: 2rem;
-	font-weight: bold;
-	color: #89907c;
+	font-family: "Baskerville Book BQ Italic";
+	color: rgb(137, 144, 124);
 	transition: var(--transition-1);
 }
 
 #table {
 	margin-top: 1vh;
 	font-size: 3rem;
-	color: #89907c;
+	font-family: 'Baskerville Book BQ Regular';
+	color: rgb(137, 144, 124);
 	transition: var(--transition-1);
 }
 
@@ -159,6 +178,7 @@ h4::selection {
 
 .selection::selection {
 	color: #64ceaa;
+	font-style: italic;
 }
 
 .autoComplete_wrapper {
@@ -170,11 +190,40 @@ h4::selection {
 	border: .05rem solid #89907c;
 	width: 100%;
 	font-size: 1rem;
+	font-family: "Baskerville Book BQ Regular";
+	background-image: url(search-svgrepo-com.svg);
 }
 
+.autoComplete_wrapper>input:focus {
+	color: #89907c;
+	border: .05rem solid #89907c;
+}
 
-#autoComplete_list_1{
+.autoComplete_wrapper>input:focus::placeholder {
+	color: #89907c;
+}
+
+.autoComplete_wrapper>input:hover {
+	color: #89907c;
+}
+
+.autoComplete_wrapper>input:hover::placeholder {
+	color: #89907c;
+}
+
+.autoComplete_wrapper>input::placeholder {
+	color: #89907c;
+	font-family: "Baskerville Book BQ Italic";
+}
+
+#autoComplete_list_1 {
 	max-height: 50vh;
+}
+.autoComplete_wrapper>ul>li{
+	color: black;
+}
+.autoComplete_wrapper>ul>li mark{
+	color: rgb(153, 216, 128);
 }
 @media only screen and (max-width: 600px) {
 	.selection {

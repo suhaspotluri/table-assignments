@@ -35,13 +35,13 @@ const autoCompleteJS = new autoComplete({
 	placeHolder: "Enter name to find table",
 	resultsList: {
 		element: (list, data) => {
-			const info = document.createElement("p");
-			if (data.results.length > 0) {
-				info.innerHTML = `Displaying <strong>${data.results.length}</strong> out of <strong>${data.matches.length}</strong> results`;
-			} else {
-				info.innerHTML = `Found <strong>${data.matches.length}</strong> matching results for <strong>"${data.query}"</strong>`;
-			}
-			list.prepend(info);
+			// const info = document.createElement("p");
+			// if (data.results.length > 0) {
+			// 	info.innerHTML = `Displaying <strong>${data.results.length}</strong> out of <strong>${data.matches.length}</strong> results`;
+			// } else {
+			// 	info.innerHTML = `Found <strong>${data.matches.length}</strong> matching results for <strong>"${data.query}"</strong>`;
+			// }
+			// list.prepend(info);
 		},
 		noResults: true,
 		maxResults: 300,
@@ -87,22 +87,22 @@ autoCompleteJS.input.addEventListener("selection", function (event) {
 });
 
 // Blur/unBlur page elements
-const action = (action) => {
-	const title = document.querySelector("h1");
-	const mode = document.querySelector(".mode");
-	const selection = document.querySelector(".selection");
-	const footer = document.querySelector(".footer");
+// const action = (action) => {
+// 	const title = document.querySelector("h1");
+// 	const mode = document.querySelector(".mode");
+// 	const selection = document.querySelector(".selection");
+// 	const footer = document.querySelector(".footer");
 
-	if (action === "dim") {
-		title.style.opacity = 1;
-		mode.style.opacity = 1;
-		selection.style.opacity = 1;
-	} else {
-		title.style.opacity = 0.3;
-		mode.style.opacity = 0.2;
-		selection.style.opacity = 0.1;
-	}
-};
+// 	if (action === "dim") {
+// 		title.style.opacity = 1;
+// 		mode.style.opacity = 1;
+// 		selection.style.opacity = 1;
+// 	} else {
+// 		title.style.opacity = 0.3;
+// 		mode.style.opacity = 0.2;
+// 		selection.style.opacity = 0.1;
+// 	}
+// };
 
 // Blur/unBlur page elements on input focus
 ["focus", "blur"].forEach((eventType) => {
