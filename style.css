@@ -234,6 +234,13 @@ h4::selection {
 
 p {
 	color: rgb(64, 79, 38);
+	margin-top: 0px;
+	font-size: 0.5rem;
+}
+
+.seating-map {
+	margin-top: 5vh;
+	display: none;
 }
 
 @media only screen and (max-width: 600px) {

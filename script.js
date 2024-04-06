@@ -78,11 +78,12 @@ autoCompleteJS.input.addEventListener("selection", function (event) {
 	const selection = feedback.selection.value[feedback.selection.key];
 	const selection_table = feedback.selection.value.table;
 	// Render selected choice to selection div
-	document.querySelector(".selection").innerHTML = `${selection}:` ;
-	document.querySelector("#table").innerHTML = `Table ${selection_table}` ;
+	document.querySelector(".selection").innerHTML = `${selection}:`;
+	document.querySelector("#table").innerHTML = `Table ${selection_table}`;
 	// Replace Input value with the selected value
 	autoCompleteJS.input.value = selection;
 	// Console log autoComplete data feedback
+	document.querySelector(".seating-map").style.display = 'block'
 	console.log(feedback);
 });
 
