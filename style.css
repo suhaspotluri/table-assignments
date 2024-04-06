@@ -24,15 +24,15 @@
 html {
 	font-size: 3rem;
 	font-family: "Baskerville Book BQ Regular";
-	overflow-x: hidden;
+	overflow-x: scroll;
 	position: relative;
 }
 
 body {
 	margin: 0;
 	padding: 0;
-	overflow-x: hidden;
-	overflow-y: hidden;
+	overflow-x: scroll;
+	overflow-y: scroll;
 	position: relative;
 	height: 100vh;
 }
@@ -235,16 +235,10 @@ h4::selection {
 p {
 	color: rgb(64, 79, 38);
 	margin-top: 0px;
-	font-size: 0.5rem;
+	font-size: 0.2rem;
 }
 
 .seating-map {
 	margin-top: 5vh;
 	display: none;
-}
-
-@media only screen and (max-width: 600px) {
-	.selection {
-		margin-top: 15vh;
-	}
 }
