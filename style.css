@@ -219,12 +219,23 @@ h4::selection {
 #autoComplete_list_1 {
 	max-height: 50vh;
 }
-.autoComplete_wrapper>ul>li{
+
+.autoComplete_wrapper>ul>li {
 	color: black;
 }
-.autoComplete_wrapper>ul>li mark{
+
+.autoComplete_wrapper>ul>li mark {
 	color: rgb(153, 216, 128);
 }
+
+.img {
+	width: 100vw;
+}
+
+p {
+	color: rgb(64, 79, 38);
+}
+
 @media only screen and (max-width: 600px) {
 	.selection {
 		margin-top: 15vh;
